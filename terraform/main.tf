@@ -1,8 +1,13 @@
 # Create an S3 bucket
 resource "aws_s3_bucket" "sample" {
   bucket = var.bucket_name
-  acl    = "private"
   # Additional configuration can be added here
+}
+
+# Set S3 bucket ACL to private
+resource "aws_s3_bucket_acl" "sample" {
+  bucket = aws_s3_bucket.sample.id
+  acl    = "private"
 }
 
 # Create a VPC

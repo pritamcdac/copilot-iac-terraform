@@ -1,10 +1,10 @@
-# Configure the AWS provider with an intentionally outdated version constraint
+# Configure the AWS provider
 terraform {
-  required_version = ">= 1.3"
+  required_version = ">= 1.5"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.0" # Intentionally outdated for upgrade testing
+      version = "~> 5.0"
     }
   }
 }
